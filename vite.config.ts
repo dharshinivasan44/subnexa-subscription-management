@@ -5,7 +5,22 @@ import {defineConfig} from 'vite';
 
 export default defineConfig(() => {
   return {
-    plugins: [react(), tailwindcss()],
+    base: '/subnexa-subscription-management/',
+    plugins: [
+      react(),
+      tailwindcss(),
+      {
+        name: 'dev-base-rewrite',
+        configureServer(server) {
+          server.middlewares.use((req, res, next) => {
+            if (req.url === '/' || req.url === '') {
+              req.url = '/subnexa-subscription-management/';
+            }
+            next();
+          });
+        },
+      },
+    ],
     resolve: {
       alias: {
         '@': path.resolve(__dirname, '.'),

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Subnexa - Redirecting...</title>
+    <script>
+      // Single Page App redirect handler for GitHub Pages
+      (function () {
+        var path = window.location.pathname;
+        var repo = '/subnexa-subscription-management';
+        
+        // Extract route after repo prefix if present
+        var route = '';
+        if (path.indexOf(repo) === 0) {
+          route = path.substring(repo.length);
+        } else {
+          route = path;
+        }
+
+        // Clean leading slash
+        if (route.charAt(0) !== '/') {
+          route = '/' + route;
+        }
+
+        // Redirect to hash route
+        var target = repo + '/#' + route + window.location.search + window.location.hash;
+        window.location.replace(target);
+      })();
+    </script>
+  </head>
+  <body style="font-family: sans-serif; text-align: center; padding-top: 50px; background-color: #f8fafc; color: #1e293b;">
+    <h2>Redirecting to Subnexa...</h2>
+    <p>Please wait while we redirect you to your requested screen.</p>
+  </body>
+</html>

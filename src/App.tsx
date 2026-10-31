@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { HashRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { AppProvider, useApp } from './context/AppContext';
 import { AppLayout } from './components/layout/AppLayout';
 import { ToastContainer } from './components/common/ToastContainer';
@@ -50,7 +50,7 @@ const HomeRedirector: React.FC = () => {
 export default function App() {
   return (
     <AppProvider>
-      <BrowserRouter>
+      <HashRouter>
         <Routes>
           {/* Public Auth Routes */}
           <Route path="/login" element={<LoginPage />} />
@@ -218,7 +218,7 @@ export default function App() {
 
         {/* Global Toast Feedback System */}
         <ToastContainer />
-      </BrowserRouter>
+      </HashRouter>
     </AppProvider>
   );
 }
