@@ -1,0 +1,6 @@
+{
+  "name": "Subnexa",
+  "description": "Smart Subscriptions. Seamless Revenue. Enterprise subscription management, recurring billing, and fintech revenue operations for Brightloop Software.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
